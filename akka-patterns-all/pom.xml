@@ -15,6 +15,7 @@
     <name>akka-patterns-all</name>
     <modules>
         <module>akka-patterns-basic</module>
+        <module>akka-patterns-backend</module>
     </modules>
 
     <dependencyManagement>
@@ -31,7 +32,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_${scala.major.version}</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
