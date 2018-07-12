@@ -17,6 +17,7 @@
         <module>akka-patterns-basic</module>
         <module>akka-patterns-backend</module>
         <module>akka-patterns-message</module>
+        <module>akka-patterns-aggregate</module>
     </modules>
 
     <dependencyManagement>
