@@ -19,6 +19,7 @@
         <module>akka-patterns-message</module>
         <module>akka-patterns-aggregate</module>
         <module>akka-patterns-chaining</module>
+        <module>akka-patterns-while</module>
     </modules>
 
     <dependencyManagement>
