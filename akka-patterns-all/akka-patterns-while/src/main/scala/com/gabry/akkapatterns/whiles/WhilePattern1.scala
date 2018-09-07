@@ -9,6 +9,7 @@ import com.typesafe.config.ConfigFactory
 class WhileActor extends Actor{
   override def receive: Receive = {
     case "start" =>
+      self
       println("do start work")
       var i=0
       val maxLine = 10

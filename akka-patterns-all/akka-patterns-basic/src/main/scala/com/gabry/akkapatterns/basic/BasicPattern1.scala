@@ -8,15 +8,22 @@ import com.typesafe.config.ConfigFactory
   * Created by gabry on 2018/7/6 13:55
   */
 class SimpleActor(name:String) extends Actor {
+  override def preStart(): Unit = {
+    hello()
+    super.preStart()
+  }
   private def doWork(message:SayHello):Unit = {
     println(s"$name 收到 ${message.from.path.name} 的消息 [$message] ，工作进行中... 当前线程号 ${Thread.currentThread().getId}")
+    hello()
   }
   override def receive: Receive = {
     case msg @ SayHello(from,message) =>
       doWork(msg)
       val returnMsg = HelloSaid(s"嗨 ${from.path.name} ,${self.path.name} 收到了 $message 消息")
       println(s"$name 工作结束，准备返回消息[${returnMsg.message}]")
+      hello()
   }
+  def hello() = println("helloworld")
 }
 object BasicPattern1 {
   def main(args: Array[String]): Unit = {
@@ -25,5 +32,6 @@ object BasicPattern1 {
     println(s"Main thread Id ${Thread.currentThread().getId}")
     person1 ! SayHello(person1,"Hello World 1")
     person1 ! SayHello(person1,"Hello World 2")
+    person1.tell(SayHello(person1,"Hello World 2"),person1)
   }
 }

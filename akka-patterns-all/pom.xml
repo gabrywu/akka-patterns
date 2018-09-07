@@ -20,6 +20,7 @@
         <module>akka-patterns-aggregate</module>
         <module>akka-patterns-chaining</module>
         <module>akka-patterns-while</module>
+        <module>akka-patterns-anchor</module>
     </modules>
 
     <dependencyManagement>

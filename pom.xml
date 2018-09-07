@@ -11,6 +11,7 @@
   <modules>
     <module>akka-patterns-java</module>
     <module>akka-patterns-all</module>
+    <module>akka-extension-actor-tree</module>
   </modules>
 
   <name>akka-patterns-parent</name>
